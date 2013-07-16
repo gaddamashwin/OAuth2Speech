@@ -28,9 +28,9 @@ namespace DotNetOpenAuth.ApplicationBlock {
 		/// a user's private Twitter data.
 		/// </summary>
 		public static readonly ServiceProviderDescription ServiceDescription = new ServiceProviderDescription {
-			RequestTokenEndpoint = new MessageReceivingEndpoint("https://twitter.com/oauth/request_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
-			UserAuthorizationEndpoint = new MessageReceivingEndpoint("https://twitter.com/oauth/authorize", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
-			AccessTokenEndpoint = new MessageReceivingEndpoint("https://twitter.com/oauth/access_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+            RequestTokenEndpoint = new MessageReceivingEndpoint("https://api.twitter.com/oauth/request_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+            UserAuthorizationEndpoint = new MessageReceivingEndpoint("https://api.twitter.com/oauth/authorize", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+            AccessTokenEndpoint = new MessageReceivingEndpoint("https://api.twitter.com/oauth/access_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
 			TamperProtectionElements = new ITamperProtectionChannelBindingElement[] { new HmacSha1SigningBindingElement() },
 		};
 
@@ -38,9 +38,9 @@ namespace DotNetOpenAuth.ApplicationBlock {
 		/// The description of Twitter's OAuth protocol URIs for use with their "Sign in with Twitter" feature.
 		/// </summary>
 		public static readonly ServiceProviderDescription TwitterServiceDescription = new ServiceProviderDescription {
-			RequestTokenEndpoint = new MessageReceivingEndpoint("https://twitter.com/oauth/request_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
-			UserAuthorizationEndpoint = new MessageReceivingEndpoint("https://twitter.com/oauth/authenticate", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
-			AccessTokenEndpoint = new MessageReceivingEndpoint("https://twitter.com/oauth/access_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+            RequestTokenEndpoint = new MessageReceivingEndpoint("https://api.twitter.com/oauth/request_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+            UserAuthorizationEndpoint = new MessageReceivingEndpoint("https://api.twitter.com/oauth/authenticate", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
+            AccessTokenEndpoint = new MessageReceivingEndpoint("https://api.twitter.com/oauth/access_token", HttpDeliveryMethods.GetRequest | HttpDeliveryMethods.AuthorizationHeaderRequest),
 			TamperProtectionElements = new ITamperProtectionChannelBindingElement[] { new HmacSha1SigningBindingElement() },
 		};
 
@@ -216,7 +216,7 @@ namespace DotNetOpenAuth.ApplicationBlock {
 
 			// If we were going to make this LOOK like OpenID even though it isn't,
 			// this seems like a reasonable, secure claimed id to allow the user to assume.
-			OpenId.Identifier fake_claimed_id = string.Format(CultureInfo.InvariantCulture, "http://twitter.com/{0}#{1}", screenName, userId);
+			OpenId.Identifier fake_claimed_id = string.Format(CultureInfo.InvariantCulture, "https://twitter.com/{0}#{1}", screenName, userId);
 
 			return true;
 		}
