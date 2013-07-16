@@ -12,7 +12,7 @@
 	using DotNetOpenAuth.ApplicationBlock;
 	using DotNetOpenAuth.OAuth;
 
-	public partial class SignInWithTwitter : System.Web.UI.Page {
+	public partial class Twitter : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 			if (TwitterConsumer.IsTwitterConsumerConfigured) {
 				this.MultiView1.ActiveViewIndex = 1;
@@ -20,9 +20,9 @@
 				if (!IsPostBack) {
 					string screenName;
 					int userId;
-					if (TwitterConsumer.TryFinishSignInWithTwitter(out screenName, out userId)) {
+					if (TwitterConsumer.TryFinishTwitter(out screenName, out userId)) {
 						this.loggedInPanel.Visible = true;
-						this.loggedInName.Text = screenName;
+                        this.loggedInName.Text = screenName + " : " + userId;
 
 						// In a real app, the Twitter username would likely be used
 						// to log the user into the application.
@@ -33,7 +33,7 @@
 		}
 
 		protected void signInButton_Click(object sender, ImageClickEventArgs e) {
-			TwitterConsumer.StartSignInWithTwitter(this.forceLoginCheckbox.Checked).Send();
+			TwitterConsumer.StartTwitter(this.forceLoginCheckbox.Checked).Send();
 		}
 	}
 }

@@ -10,7 +10,7 @@
 namespace OAuth2Speech {
     
     
-    public partial class SignInWithTwitter {
+    public partial class Twitter {
         
         /// <summary>
         /// form1 control.

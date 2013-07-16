@@ -18,7 +18,7 @@
 	<ul>
 		<li><a href="GoogleAddressBook.aspx">Download your Gmail address book</a></li>
 		<li><a href="Twitter.aspx">Get your Twitter updates</a></li>
-		<li><a href="SignInWithTwitter.aspx">Sign In With Twitter</a></li>
+		<li><a href="Twitter.aspx">Sign In With Twitter</a></li>
 		<li><a href="AzureAD.aspx">Sign in with Azure Active Directory\Office 365</a></li>
 		<li><a href="Facebook.aspx">Sign in with Facebook (OAuth 2.0)</a></li>
 		<li><a href="WindowsLive.aspx">Sign in with Windows Live (OAuth 2.0)</a></li>

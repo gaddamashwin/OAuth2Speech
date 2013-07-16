@@ -53,10 +53,6 @@
     <Reference Include="DotNetOpenAuth">
       <HintPath>..\..\Bin-net4.0\DotNetOpenAuth.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetOpenAuth.ApplicationBlock, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\DotNetOpenAuth.ApplicationBlock.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\Lib\log4net.dll</HintPath>
     </Reference>
@@ -101,7 +97,7 @@
     <Content Include="Lib\log4net.dll" />
     <Content Include="WindowsLive.aspx" />
     <Content Include="packages.config" />
-    <Content Include="SignInWithTwitter.aspx" />
+    <Content Include="Twitter.aspx" />
     <Content Include="TracePage.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -125,12 +121,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="SignInWithTwitter.aspx.cs">
-      <DependentUpon>SignInWithTwitter.aspx</DependentUpon>
+    <Compile Include="Twitter.aspx.cs">
+      <DependentUpon>Twitter.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SignInWithTwitter.aspx.designer.cs">
-      <DependentUpon>SignInWithTwitter.aspx</DependentUpon>
+    <Compile Include="Twitter.aspx.designer.cs">
+      <DependentUpon>Twitter.aspx</DependentUpon>
     </Compile>
     <Compile Include="TracePage.aspx.cs">
       <DependentUpon>TracePage.aspx</DependentUpon>
@@ -150,7 +146,12 @@
       <DependentUpon>WindowsLive.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="DotNetOpenAuth.ApplicationBlock\DotNetOpenAuth.ApplicationBlock.csproj">
+      <Project>{aa78d112-d889-414b-a7d4-467b34c7b663}</Project>
+      <Name>DotNetOpenAuth.ApplicationBlock</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.master" />
   </ItemGroup>
