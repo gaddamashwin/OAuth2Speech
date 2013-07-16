@@ -92,7 +92,6 @@
     <Content Include="images\Windows-Live-Messenger-Icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Lib\DotNetOpenAuth.ApplicationBlock.dll" />
     <Content Include="Lib\DotNetOpenAuth.dll" />
     <Content Include="Lib\log4net.dll" />
     <Content Include="WindowsLive.aspx" />
